@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Catallaxy Services | Teaching Old Dogs New Tricks</title>
+
+		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="../WebsiteAssets/mods.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h2>Teaching Old Dogs New Tricks</h2>
+					<h3>Revitalizing a SQL Server Code Base One Version at a Time</h3>
+					
+					<a href="https://www.catallaxyservices.com">Kevin Feasel</a> (<a href="https://twitter.com/feaselkl">@feaselkl</a>)<br />
+					<a href="https://csmore.info/on/olddogs">https://csmore.info/on/olddogs</a>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Who Am I?  What Am I Doing Here?</h3>
+					<div class="container">
+						<div class="col">
+							<table class="whoami">
+								<tr>
+									<td><a href="https://csmore.info"><img src="../WebsiteAssets/Logo.png" height="100" /></a></td>
+									<td nowrap><a href="https://csmore.info">Catallaxy Services</a></td>
+								</tr>
+								<tr>
+									<td><a href="https://curatedsql.com"><img src="../WebsiteAssets/CuratedSQLLogo.png" height="100" /></a></td>
+									<td nowrap><a href="https://curatedsql.com">Curated SQL</a></td>
+								</tr>
+								<tr>
+									<td><a href="https://www.amazon.com/Finding-Ghosts-Your-Data-Techniques/dp/1484288696"><img src="../WebsiteAssets/Finding-Ghosts.jpg" height="120" /></a></td>
+									<td nowrap><a href="https://www.amazon.com/Finding-Ghosts-Your-Data-Techniques/dp/1484288696">Finding Ghosts in Your Data</a></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col">
+							<a href="http://www.twitter.com/feaselkl"><img src="../WebsiteAssets/HeadShot.jpg" height="358" width="315" /></a>
+							<br />
+							<a href="http://www.twitter.com/feaselkl">@feaselkl</a>
+						</div>					
+					</div>
+				</section>
+
+				<section data-background-image="presentation/assets/background/motivation.jpg" data-background-opacity="0.2">
+					<h3>Motivation</h3>
+					
+					<p>Databases tend to last a <strong>lot</strong> longer than applications.</p>
+					
+					<p>The primary database(s) you work with have likely been around for decades, in some form or another.</p>
+					
+					<p>SQL Server has changed a lot since those databases were new, and there may be better ways to solve problems than existed before.</p>
+					
+					<p>Let's bring some vitality back to those old databases and make our lives easier in the process!</p>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li class="active">Ground Rules</li>
+						<li>SQL Server 2012</li>
+						<li>SQL Server 2014</li>
+						<li>SQL Server 2016</li>
+						<li>SQL Server 2017</li>
+						<li>SQL Server 2019</li>
+						<li>SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/magnifying-glass.jpg" data-background-opacity="0.2">
+					<h3>Ground Rules</h3>
+					
+					<ol>
+						<li>We will focus only on T-SQL improvements, not external products (e.g., SSIS, SSAS, SSRS, ML Services)</li>
+						<li>We will focus on enhancements in functionality, not necessarily performance--we will ignore most adaptive query processing changes</li>
+						<li>We will focus on "like to like" replacements, not "net new" things--we will ignore PolyBase, In-Memory OLTP, cardinality estimators, Query Store, etc.</li>
+						<li>We will start with SQL Server 2012 and move forward version by version.</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li>Ground Rules</li>
+						<li class="active">SQL Server 2012</li>
+						<li>SQL Server 2014</li>
+						<li>SQL Server 2016</li>
+						<li>SQL Server 2017</li>
+						<li>SQL Server 2019</li>
+						<li>SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
+					<h3>Functionality We Won't Discuss</h3>
+					
+					<ul>
+						<li>Columnstore indexes</li>
+						<li>Availability groups</li>
+					</ul>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li>Ground Rules</li>
+						<li>SQL Server 2012</li>
+						<li class="active">SQL Server 2014</li>
+						<li>SQL Server 2016</li>
+						<li>SQL Server 2017</li>
+						<li>SQL Server 2019</li>
+						<li>SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
+					<h3>Functionality We Won't Discuss</h3>
+					
+					<ul>
+						<li>New cardinality estimator</li>
+						<li>In-Memory OLTP</li>
+						<li>Delayed Durability</li>
+						<li>Updatable columnstore indexes</li>
+						<li><code>SELECT INTO</code> now parallelizable</li>
+					</ul>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li>Ground Rules</li>
+						<li>SQL Server 2012</li>
+						<li>SQL Server 2014</li>
+						<li class="active">SQL Server 2016</li>
+						<li>SQL Server 2017</li>
+						<li>SQL Server 2019</li>
+						<li>SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
+					<h3>Functionality We Won't Discuss</h3>
+					
+					<ul>
+						<li>Query Store</li>
+						<li>Adaptive Query Processing</li>
+						<li>Temporal tables</li>
+						<li>PolyBase to Hadoop / Azure Blob Storage</li>
+						<li>Always Encrypted</li>
+						<li>Row-Level Security</li>
+						<li>Dynamic Data Masking</li>
+						<li>R Services</li>
+					</ul>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li>Ground Rules</li>
+						<li>SQL Server 2012</li>
+						<li>SQL Server 2014</li>
+						<li>SQL Server 2016</li>
+						<li class="active">SQL Server 2017</li>
+						<li>SQL Server 2019</li>
+						<li>SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
+					<h3>Functionality We Won't Discuss</h3>
+					
+					<ul>
+						<li>SQL Server on Linux / Containers</li>
+						<li>ML Services and Python support</li>
+						<li>Adaptive Query Processing updates:  batch mode and interleaved execution</li>
+						<li>Graph database</li>
+						<li>Distributed availability groups</li>
+					</ul>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li>Ground Rules</li>
+						<li>SQL Server 2012</li>
+						<li>SQL Server 2014</li>
+						<li>SQL Server 2016</li>
+						<li>SQL Server 2017</li>
+						<li class="active">SQL Server 2019</li>
+						<li>SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
+					<h3>Functionality We Won't Discuss</h3>
+					
+					<ul>
+						<li>Intelligent Query Processing</li>
+						<li>Memory-optimized TempDB metadata</li>
+						<li>Accelerated Database Recovery</li>
+						<li>Batch mode on rowstore operations</li>
+						<li>PolyBase to ODBC</li>
+						<li>UTF-8 support</li>
+						<li>ML Services and Java support</li>
+					</ul>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+				
+				<section data-background-image="presentation/assets/image/Bubbles.jpg" data-background-opacity="0.4">
+					<h3>Agenda</h3>
+					
+					<ol>
+						<li>Ground Rules</li>
+						<li>SQL Server 2012</li>
+						<li>SQL Server 2014</li>
+						<li>SQL Server 2016</li>
+						<li>SQL Server 2017</li>
+						<li>SQL Server 2019</li>
+						<li class="active">SQL Server 2022</li>
+					</ol>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/rejection.jpg" data-background-opacity="0.2">
+					<h3>Functionality We Won't Discuss</h3>
+					
+					<ul>
+						<li>Intelligent Query Processing updates
+							<ul>
+								<li>Parameter sensitive plan optimization</li>
+								<li>Degree of parallelism feedback</li>
+								<li>Cardinality estimation feedback</li>
+								<li>Query Store hints</li>
+							</ul>
+						</li>
+						<li>Ledger tables</li>
+						<li>Purview and Synapse integration</li>
+						<li>Managed Instance link</li>
+						<li>PolyBase to APIs (S3, Azure Blob Storage, Azure Data Lake Storage Gen2)</li>
+					</ul>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/demo.jpg" data-background-opacity="0.2">
+					<h3>Demo Time</h3>
+				</section>
+
+				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
+					<h3>Wrapping Up</h3>
+					
+					<p>The T-SQL language has changed a lot in the past decade.  Between new functionality and enhancements to the existing core language, there are plenty of opportunities to work with existing code bases and make them better.</p>
+				</section>
+				
+				<section data-background-image="presentation/assets/background/wrappingup.jpg" data-background-opacity="0.2">
+					<h3>Wrapping Up</h3>
+					
+					<p>
+						To learn more, go here:
+						<br />
+						<a href="https://csmore.info/on/olddogs">https://csmore.info/on/olddogs</a>
+					</p>
+					<br />
+					<p>
+						And for help, contact me:
+						<br />
+						<a href="mailto:feasel@catallaxyservices.com">feasel@catallaxyservices.com</a> | <a href="https://www.twitter.com/feaselkl">@feaselkl</a>
+					</p>
+					<br />
+					<p>
+						Catallaxy Services consulting:
+						<br />
+						<a href="https://csmore.info/contact">https://CSmore.info/on/contact</a>
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="../reveal.js/dist/reveal.js"></script>
+		<script src="../reveal.js/plugin/zoom/zoom.js"></script>
+		<script src="../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../reveal.js/plugin/search/search.js"></script>
+		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../reveal.js/plugin/math/math.js"></script>
+		<script src="../reveal.js/plugin/menu/menu.js"></script>
+		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../reveal.js/plugin/chart/Chart.min.js"></script>
+		<script src="../reveal.js/plugin/chart/plugin.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				width: '70%',
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				transition: 'fade',
+				
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath, RevealMenu, RevealChart ]
+			});
+		</script>
+	</body>
+</html>
