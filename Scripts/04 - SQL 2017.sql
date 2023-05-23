@@ -70,41 +70,8 @@ GO
 
 
 
-/* Demo 3:  TRANSLATE() */
-DECLARE
-    @SomeInputString NVARCHAR(100) = N'I forget [sometimes] that I should {use parentheses} instead of (square brackets).';
 
-SELECT
-    TRANSLATE(@SomeInputString, '[]{}', '()()');
-GO
-
--- Cannot simply miss characters.
-DECLARE
-    @SomeInputString NVARCHAR(100) = N'I forget [sometimes] that I should {use parentheses} instead of (square brackets).';
-
-SELECT
-    TRANSLATE(@SomeInputString, '[]{}', '()');
-GO
-
--- Direct 1:1 comparison with no context.
-DECLARE
-    @SomeInputString NVARCHAR(100) = N'I forget [sometimes] that I should {use parentheses} instead of (square brackets).';
-
-SELECT
-    TRANSLATE(@SomeInputString, '[f]{}', '(c)()');
-GO
-
--- Casing doesn't matter with this collation and limited to same number of chars in input + output
-DECLARE
-    @SomeInputString NVARCHAR(100) = N'I forget [sometimes] that I should {use parentheses} instead of (square brackets).';
-
-SELECT
-    TRANSLATE(@SomeInputString, 'I[]{}', 'U()()');
-GO
-
-
-
-/* Demo 4:  STRING_AGG() */
+/* Demo 3:  STRING_AGG() */
 CREATE TABLE #States
 (
     StateProvinceCode CHAR(2),
