@@ -136,6 +136,23 @@ SELECT
     StateProvinceCode
 FROM #States s;
 
+-- Pre-2017 solution
+SELECT
+    s.SalesTerritory,
+    STUFF
+        ((
+            SELECT
+                ',' + s2.StateProvinceCode
+            FROM #States s2
+            WHERE
+                s.SalesTerritory = s2.SalesTerritory
+            ORDER BY
+                s2.StateProvinceCode
+            FOR XML PATH ('')
+        ), 1, 1, '') AS StatesList
+FROM #States s;
+
+-- 2017 and later solution
 SELECT
     SalesTerritory,
     STRING_AGG(StateProvinceCode, ',')  AS StatesList
