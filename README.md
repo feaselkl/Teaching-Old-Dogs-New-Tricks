@@ -4,4 +4,4 @@ This is the repository for my talk entitled [Teaching Old Dogs New Tricks:  Revi
 
 ## Database Requirements
 
-This code repository uses the [TSQLV6](https://tsql.lucient.com/SampleDatabases/TSQLV6.zip) database for demos.  You will need to have a copy of it to run the scripts.
+This code repository uses the [TSQLV6](https://itziktsql.com/r-downloads) database for demos.  You will need to have a copy of it to run the scripts.
