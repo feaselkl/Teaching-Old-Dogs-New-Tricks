@@ -28,6 +28,7 @@ GO
 
 /* Demo 2:  DROP IF EXISTS */
 DROP PROCEDURE IF EXISTS dbo.ExecuteSomething;
+DROP FUNCTION IF EXISTS dbo.ExecuteSomethingFunctional;
 DROP TABLE IF EXISTS dbo.SomeMissingTable;
 DROP VIEW IF EXISTS dbo.SomeMissingView;
 
