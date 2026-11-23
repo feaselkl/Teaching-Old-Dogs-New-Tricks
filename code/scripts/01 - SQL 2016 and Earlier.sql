@@ -51,6 +51,7 @@ SELECT
 SELECT
     o.orderid,
     o.orderdate,
+    o.custid,
     o.empid,
     LAG(o.orderid) OVER (PARTITION BY o.custid ORDER BY o.orderid ASC) AS PriorOrderID,
     LAG(o.orderid, 1) OVER (PARTITION BY o.custid ORDER BY o.orderid ASC) AS PriorOrderIDAgain,

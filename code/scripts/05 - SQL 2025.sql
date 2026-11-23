@@ -161,7 +161,8 @@ FROM dbo.States s
 -- Pre-2025: fuzzy matching required CLR assemblies or SSIS Fuzzy Lookup.
 -- 2025 adds Levenshtein and Jaro-Winkler functions natively.
 
--- As of CU3, this is a preview feature.
+-- As of CU11, this is now generally available, though you may still need to
+-- turn preview features on if you aren't on the latest CU.
 ALTER DATABASE SCOPED CONFIGURATION SET PREVIEW_FEATURES = ON;
 
 -- How similar are these state names?
